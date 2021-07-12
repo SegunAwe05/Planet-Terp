@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Cosmos",
+        "repositoryURL": "https://github.com/evgenyneu/Cosmos.git",
+        "state": {
+          "branch": null,
+          "revision": "cce521e734d0090494bd4afab5fd2e2f2465c1af",
+          "version": "23.0.0"
+        }
+      },
+      {
+        "package": "StarRating",
+        "repositoryURL": "https://github.com/dkk/StarRating",
+        "state": {
+          "branch": null,
+          "revision": "89dba504097ddd4166bb118d615e201619a1602f",
+          "version": "2.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
