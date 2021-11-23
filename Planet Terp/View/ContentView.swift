@@ -22,7 +22,7 @@ extension Double {
 }
 
 struct ContentView: View {
-//    @ObservedObject var viewModel: FetchData
+    
     var body: some View {
         NavigationView {
             ZStack {

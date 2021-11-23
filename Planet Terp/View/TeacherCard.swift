@@ -42,8 +42,8 @@ struct TeacherCard: View {
                             .foregroundColor(.white)
                             .padding(.trailing, 115) // 115
                         
-                        //StarRating(initialRating: viewModelFetch.roundedValue, configuration: $custom).frame(width: 155, height: 20)
-                        
+                       // StarRating(initialRating: viewModelFetch.roundedValue, configuration: $custom).frame(width: 155, height: 20)
+                        StarsView(rating: CGFloat(viewModelFetch.roundedValue), maxRating: 5)
                     }
                 }
             }
@@ -59,7 +59,7 @@ struct TeacherCard: View {
 
 struct TeacherCard_Previews: PreviewProvider {
     static var previews: some View {
-        TeacherCard(name: "Raluca Rosca")
+        TeacherCard(viewModelFetch: FetchReviews(), name: "Raluca Rosca")
     }
 }
 
@@ -90,3 +90,30 @@ struct TeacherCard_Previews: PreviewProvider {
 //    
 //    
 //}
+struct StarsView: View {
+    var rating: CGFloat
+    var maxRating: Int
+
+    var body: some View {
+        let stars = HStack(spacing: 0) {
+            ForEach(0..<maxRating) { _ in
+                Image(systemName: "star.fill")
+                    .font(.system(size: 19.0))
+            }
+        }
+
+        stars.overlay(
+            GeometryReader { g in
+                let width = rating / CGFloat(maxRating) * g.size.width
+                ZStack(alignment: .leading) {
+                  Rectangle()
+                        .frame(width: width)
+                        .foregroundColor(.orange)
+                }
+            }
+            .mask(stars)
+        )
+        .foregroundColor(.white)
+        
+    }
+}

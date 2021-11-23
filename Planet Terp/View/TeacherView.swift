@@ -13,7 +13,7 @@ struct TeacherView: View {
     var offWhite = Color("offWhite")
     var namm: String
     @Environment( \.presentationMode) var goBack
-//    @State var revModel = ProfReview(rating: 5, created: "22", expected_grade: "33", course: "ll", review: "idk")
+
     
     var body: some View {
         ZStack {
@@ -47,7 +47,7 @@ struct TeacherView: View {
                     
                     Spacer().frame(height: 40)
                     LazyVStack {
-                        ForEach(viewModelFetch.convertedReview.reviews, id: \.self) { mod in
+                        ForEach(viewModelFetch.convertedReview.reviews.sorted {$0.created! > $1.created!}, id: \.self) { mod in
                             ReviewCard(review: mod.review ?? "No Review", date: mod.created ?? "", rateNumber: mod.rating ?? 5, course: mod.course ?? "Course", expecting: mod.expected_grade ?? "N/A")
                             Spacer().frame(height: 15)
                             // Divider()
@@ -71,7 +71,7 @@ struct TeacherView: View {
 
 struct TeacherView_Previews: PreviewProvider {
     static var previews: some View {
-        TeacherView(namm: "Raluca%20Rosca")
+        TeacherView(viewModelFetch: FetchReviews(), namm: "Raluca%20Rosca")
     }
 }
 

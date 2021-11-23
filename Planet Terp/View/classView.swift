@@ -10,10 +10,11 @@ import SwiftUI
 struct classView: View {
     var offWhite = Color("offWhite")
     @State var data = planetData(professors: ["Teacher"], credits: 3, course_number: "115", description: "Class for", title: "Pre Calc", department: "MATH")
-    @StateObject var viewModel = FetchData()
+    @ObservedObject var viewModel: FetchData
     @Environment( \.presentationMode) var goBack
     @State var isMore = false
-    @StateObject var viewModelFetch = FetchReviews()
+   // @StateObject var viewModelFetch = FetchReviews()
+   
     var body: some View {
         ZStack {
             Rectangle()
@@ -72,8 +73,8 @@ struct classView: View {
                         }
                         // for each to show the array of professors.
                         ForEach(data.professors ?? ["N/A"], id: \.self) { prof in  //profModel.convertedProf.professors
-                            NavigationLink(destination: TeacherView(namm: prof)) {
-                                TeacherCard(name: prof)
+                            NavigationLink(destination: TeacherView(viewModelFetch: FetchReviews(), namm: prof)) {
+                                TeacherCard(viewModelFetch: FetchReviews(), name: prof)
                             }
                         }
                         Spacer()
@@ -96,7 +97,7 @@ struct classView: View {
 
 struct classView_Previews: PreviewProvider {
     static var previews: some View {
-        classView()
+        classView(viewModel: FetchData())
 //        descripView(isMore: .constant(true), data: planetData())
     }
 }

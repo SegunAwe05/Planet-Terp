@@ -31,7 +31,7 @@ struct ListView: View {
                     
                     // list of courses in a for each
                     ForEach( viewModel.convertedData.filter({($0.course_number?.localizedCaseInsensitiveContains(searchText))! || searchText.isEmpty }), id: \.self) { model in
-                        NavigationLink(destination: classView(data: planetData(professors: model.professors ?? ["N/A"] , course_number: model.course_number ?? "N/A", description: model.description ?? "No description for this class", title: model.title ?? "N/A", department: model.department ?? "N/A"))) {
+                        NavigationLink(destination: classView(data: planetData(professors: model.professors ?? ["N/A"] , course_number: model.course_number ?? "N/A", description: model.description ?? "No description for this class", title: model.title ?? "N/A", department: model.department ?? "N/A"), viewModel: FetchData())) {
                             
                             Text("\(model.department ?? "idk") \(model.course_number ?? "num") ")
                                 .padding(12)

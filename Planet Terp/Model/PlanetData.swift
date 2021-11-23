@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// revamp this model into newer version
 // data model
 struct planetData: Codable, Hashable {
    var professors: [String]?
@@ -16,4 +16,7 @@ struct planetData: Codable, Hashable {
     var description: String?
     var title: String?
     var department: String?
+}
+struct terpReview: Codable, Hashable {
+    
 }
