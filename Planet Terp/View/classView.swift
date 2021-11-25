@@ -72,7 +72,7 @@ struct classView: View {
                             }
                         }
                         // for each to show the array of professors.
-                        ForEach(data.professors ?? ["N/A"], id: \.self) { prof in  //profModel.convertedProf.professors
+                        ForEach(data.professors?.sorted {$1 > $0} ?? ["N/A"], id: \.self) { prof in  //profModel.convertedProf.professors
                             NavigationLink(destination: TeacherView(viewModelFetch: FetchReviews(), namm: prof)) {
                                 TeacherCard(viewModelFetch: FetchReviews(), name: prof)
                             }

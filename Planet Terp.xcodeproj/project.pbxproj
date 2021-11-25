@@ -25,6 +25,10 @@
 		5098335D25BB5BB3004246C7 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5098335C25BB5BB3004246C7 /* ListView.swift */; };
 		5098336025BB5BD3004246C7 /* FetchPlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5098335F25BB5BD3004246C7 /* FetchPlanetData.swift */; };
 		50CA09FB25C65600002DD26C /* classView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA09FA25C65600002DD26C /* classView.swift */; };
+		50E2B898274F1D2D00F00D56 /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2B897274F1D2C00F00D56 /* CourseListView.swift */; };
+		50E2B89A274F1D7800F00D56 /* coursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2B899274F1D7800F00D56 /* coursesModel.swift */; };
+		50E2B89C274F1D8E00F00D56 /* coursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2B89B274F1D8E00F00D56 /* coursesViewModel.swift */; };
+		50E2B89E274F296000F00D56 /* CoursesCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2B89D274F296000F00D56 /* CoursesCards.swift */; };
 		50FABB34260187D800FA174B /* TeacherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FABB33260187D800FA174B /* TeacherCard.swift */; };
 		50FABB372603028C00FA174B /* TeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FABB362603028B00FA174B /* TeacherView.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +52,10 @@
 		5098335C25BB5BB3004246C7 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		5098335F25BB5BD3004246C7 /* FetchPlanetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlanetData.swift; sourceTree = "<group>"; };
 		50CA09FA25C65600002DD26C /* classView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classView.swift; sourceTree = "<group>"; };
+		50E2B897274F1D2C00F00D56 /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
+		50E2B899274F1D7800F00D56 /* coursesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coursesModel.swift; sourceTree = "<group>"; };
+		50E2B89B274F1D8E00F00D56 /* coursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coursesViewModel.swift; sourceTree = "<group>"; };
+		50E2B89D274F296000F00D56 /* CoursesCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCards.swift; sourceTree = "<group>"; };
 		50FABB33260187D800FA174B /* TeacherCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCard.swift; sourceTree = "<group>"; };
 		50FABB362603028B00FA174B /* TeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,12 +77,14 @@
 			isa = PBXGroup;
 			children = (
 				5098334B25BB5B5E004246C7 /* ContentView.swift */,
+				50E2B897274F1D2C00F00D56 /* CourseListView.swift */,
 				5098335C25BB5BB3004246C7 /* ListView.swift */,
 				50CA09FA25C65600002DD26C /* classView.swift */,
 				50FABB362603028B00FA174B /* TeacherView.swift */,
 				50FABB33260187D800FA174B /* TeacherCard.swift */,
 				501E0F3E2610352500649266 /* ReviewCard.swift */,
 				50062F5D25D770C300999CFB /* SeachBarView.swift */,
+				50E2B89D274F296000F00D56 /* CoursesCards.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -85,6 +95,7 @@
 				5098335F25BB5BD3004246C7 /* FetchPlanetData.swift */,
 				5070B02E265A0825008983C5 /* FetchReviews.swift */,
 				5070B031265A0846008983C5 /* FetchProf.swift */,
+				50E2B89B274F1D8E00F00D56 /* coursesViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -94,6 +105,7 @@
 			children = (
 				5070B024265A0776008983C5 /* PlanetProf.swift */,
 				5070B028265A07A9008983C5 /* PlanetData.swift */,
+				50E2B899274F1D7800F00D56 /* coursesModel.swift */,
 				5070B02B265A07F7008983C5 /* ProfModel.swift */,
 			);
 			path = Model;
@@ -223,11 +235,15 @@
 				5098334825BB5B5E004246C7 /* AppDelegate.swift in Sources */,
 				50FABB372603028C00FA174B /* TeacherView.swift in Sources */,
 				5070B02F265A0825008983C5 /* FetchReviews.swift in Sources */,
+				50E2B89A274F1D7800F00D56 /* coursesModel.swift in Sources */,
+				50E2B89E274F296000F00D56 /* CoursesCards.swift in Sources */,
 				50FABB34260187D800FA174B /* TeacherCard.swift in Sources */,
+				50E2B898274F1D2D00F00D56 /* CourseListView.swift in Sources */,
 				5070B029265A07A9008983C5 /* PlanetData.swift in Sources */,
 				5098336025BB5BD3004246C7 /* FetchPlanetData.swift in Sources */,
 				5098335D25BB5BB3004246C7 /* ListView.swift in Sources */,
 				50CA09FB25C65600002DD26C /* classView.swift in Sources */,
+				50E2B89C274F1D8E00F00D56 /* coursesViewModel.swift in Sources */,
 				501E0F3F2610352500649266 /* ReviewCard.swift in Sources */,
 				5070B02C265A07F7008983C5 /* ProfModel.swift in Sources */,
 				5098334A25BB5B5E004246C7 /* SceneDelegate.swift in Sources */,

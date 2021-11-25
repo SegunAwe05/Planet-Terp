@@ -26,7 +26,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-               ListView()
+               CourseListView()
             }
         }.navigationBarTitle("content")
         .navigationBarHidden(true)

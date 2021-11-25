@@ -12,6 +12,7 @@ import Foundation
 struct ProfModel: Codable, Hashable {
     var name: String?
     var reviews: [ProfReview]
+    
 }
 // data model
 struct ProfReview: Codable, Hashable {

@@ -18,7 +18,7 @@ struct ReviewCard: View {
     }()
     
     @State var offWhite = Color("offWhite")
-    @State var custom = StarRatingConfiguration( numberOfStars: 5, stepType: .full,  borderWidth: 1.5, borderColor: .clear, emptyColor: .white, shadowRadius: 0.0, shadowColor: .white, fillColors: [.orange, .orange])
+    @State var custom = StarRatingConfiguration( numberOfStars: 5, stepType: .full,  borderWidth: 1.5, borderColor: .blue, emptyColor: .clear, shadowRadius: 0.0, shadowColor: .white, fillColors: [.blue  , .blue])
     @State var review: String
     var date: String
     var rateNumber: Int

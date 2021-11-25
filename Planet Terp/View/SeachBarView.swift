@@ -11,6 +11,7 @@ struct SearchBarView: View {
     @Binding var text: String
     @State private var isEditing = false
     var offWhite = Color("offWhite")
+    var placeHold: String
  
     func dismissKey() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -18,7 +19,7 @@ struct SearchBarView: View {
     
     var body: some View {
         HStack {
-            TextField("Course Number 115,120,140", text: $text)
+            TextField("\(placeHold)", text: $text)
                 .foregroundColor(.white)
                 .padding(7)
                 .padding(.horizontal, 25)
@@ -71,6 +72,6 @@ struct SearchBarView: View {
 
 struct SeachBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView(text: .constant(""))
+        SearchBarView(text: .constant(""), placeHold: "Type here")
     }
 }

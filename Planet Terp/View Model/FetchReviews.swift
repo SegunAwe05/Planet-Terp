@@ -6,6 +6,9 @@
 //
 
 import Foundation
+
+// this is for getting the reviews left on teachers.
+
 class FetchReviews: ObservableObject {
     @Published var convertedReview = ProfModel(name: "prof", reviews: [ProfReview(rating: 1 , created: "0/00/0000", expected_grade: "", course: "", review: "")])
     @Published var isLoading = false
@@ -15,6 +18,7 @@ class FetchReviews: ObservableObject {
      var avgRating = Double()
     @Published var roundedValue = 0.0
    
+    
     
     
     func getReview(name: String) {
@@ -43,8 +47,12 @@ class FetchReviews: ObservableObject {
         if sum != 0 && count != 0 {
             avgRating = Double(sum) / Double(count)
             roundedValue = round(avgRating * 100) / 100.0
+            
         }
         
+        func sortingRating() {
+            
+        }
         
     }
 }
