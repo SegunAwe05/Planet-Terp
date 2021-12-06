@@ -32,7 +32,6 @@ struct ContentView: View {
             } .environmentObject(vm)
         }.navigationBarTitle("")
         .navigationBarHidden(true)
-        
         .edgesIgnoringSafeArea(.top)
     }
 }
@@ -43,6 +42,12 @@ extension String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.date(from: self)
+    }
+}
+extension UINavigationController {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = nil
     }
 }
 
