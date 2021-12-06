@@ -6,6 +6,37 @@
 //
 
 import SwiftUI
+struct ContentView: View {
+    
+    @StateObject var vm = FavoritesViewModel()
+    
+    init() {
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().isTranslucent = true
+        UITabBar.appearance().backgroundColor = .white
+    }
+    var body: some View {
+        TabView{
+            NavigationView{
+                CourseListView()
+            }  .tabItem {
+                Image(systemName: "house")
+                Text("Home")
+            } .environmentObject(vm)
+            NavigationView {
+                FavoriteView()
+            } .tabItem {
+                Image(systemName: "book")
+                Text("Favorites")
+            } .environmentObject(vm)
+        }.navigationBarTitle("")
+        .navigationBarHidden(true)
+        
+        .edgesIgnoringSafeArea(.top)
+    }
+}
+
 
 extension String {
     func dateFixed(format: String = "yyyy-MM-dd'T'HH:mm:ss") -> Date? {
@@ -20,21 +51,6 @@ extension Double {
         return String(format: "%.2f", self)
     }
 }
-
-struct ContentView: View {
-    
-    var body: some View {
-        NavigationView {
-            ZStack {
-               CourseListView()
-            }
-        }.navigationBarTitle("content")
-        .navigationBarHidden(true)
-        .navigationViewStyle(StackNavigationViewStyle())
-  
-    }
-}
-
 
 struct BarShadows: ViewModifier {
     func body(content: Content) -> some View {

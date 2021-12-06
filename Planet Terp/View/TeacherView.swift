@@ -13,6 +13,7 @@ struct TeacherView: View {
     var offWhite = Color("offWhite")
     var namm: String
     @Environment( \.presentationMode) var goBack
+    @EnvironmentObject var vm: FavoritesViewModel
 
     
     var body: some View {
@@ -42,6 +43,14 @@ struct TeacherView: View {
                         .cornerRadius(15)
                         .modifier(BarShadows())
                     Spacer()
+                    Button {
+                        vm.addToList(course: viewModelFetch.convertedReview.name!)
+                        
+                    } label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(.blue)
+                            .padding()
+                    }
                 }
                 ScrollView {
                     

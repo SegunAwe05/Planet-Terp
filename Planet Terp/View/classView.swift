@@ -13,8 +13,7 @@ struct classView: View {
     @ObservedObject var viewModel: FetchData
     @Environment( \.presentationMode) var goBack
     @State var isMore = false
-   // @StateObject var viewModelFetch = FetchReviews()
-   
+        
     var body: some View {
         ZStack {
             Rectangle()
@@ -43,6 +42,8 @@ struct classView: View {
                                 .cornerRadius(15)
                                 .modifier(BarShadows())
                             Spacer()
+                          
+
                         }
                         Spacer().frame(height: 10)
                         Text(data.title ?? "PreCalculus")

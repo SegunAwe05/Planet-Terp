@@ -12,6 +12,8 @@ struct ListView: View {
     var offWhite = Color("offWhite")
     @State var searchText = ""
     var course: String
+  
+    
     @Environment( \.presentationMode) var goBack
     func dismissKey() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -77,6 +79,7 @@ struct ListView: View {
                 ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
             }
         }.onAppear {
+       
             viewModel.getData(course: course)
         }.navigationBarTitle("classes")
         .navigationBarHidden(true)

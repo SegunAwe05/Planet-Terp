@@ -19,7 +19,7 @@ struct CourseListView: View {
                 .foregroundColor(offWhite)
                 .edgesIgnoringSafeArea(.all)
                             if vm.isLoading == true {
-                                //ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
+                            ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
                             } else {
             VStack {
                 Text("Planet Terp")
@@ -45,7 +45,8 @@ struct CourseListView: View {
             }
             
         }
-    }.navigationBarHidden(true)
+        }.navigationBarTitle("")
+        .navigationBarHidden(true)
         .onAppear {
             vm.getData()
         }
