@@ -44,6 +44,7 @@ extension String {
         return dateFormatter.date(from: self)
     }
 }
+// extension for swipe backwards
 extension UINavigationController {
     override open func viewDidLoad() {
         super.viewDidLoad()

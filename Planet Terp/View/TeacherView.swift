@@ -43,14 +43,26 @@ struct TeacherView: View {
                         .cornerRadius(15)
                         .modifier(BarShadows())
                     Spacer()
-                    Button {
-                        vm.addToList(course: viewModelFetch.convertedReview.name!)
-                        
-                    } label: {
-                        Image(systemName: "plus")
-                            .foregroundColor(.blue)
-                            .padding()
+                    Group {
+                        if vm.favList.contains(viewModelFetch.convertedReview.name!) {
+                            Button {
+                                vm.removeFromList(name: viewModelFetch.convertedReview.name!)
+                            } label: {
+                                Image(systemName: "minus.circle")
+                                    .foregroundColor(.blue)
+                                    .padding()
+                            }
+                        } else {
+                            Button {
+                                vm.addToList(name: viewModelFetch.convertedReview.name!)
+                            } label: {
+                                Image(systemName: "plus")
+                                    .foregroundColor(.blue)
+                                    .padding()
+                            }
+                        }
                     }
+                 
                 }
                 ScrollView {
                     

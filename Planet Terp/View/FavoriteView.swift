@@ -38,15 +38,7 @@ struct FavoriteView: View {
                     }
                 } else {
                 ForEach(vm.favList, id: \.self) { fav in 
-                    Text(fav)
-                        .frame(width: 270, height: 40)
-                        .padding(12)
-                        .padding(.trailing, 235)
-                        .frame(width: 365)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .modifier(BarShadows())
+                    TeacherCard(name: fav)
                 }
                 }
                 Spacer()

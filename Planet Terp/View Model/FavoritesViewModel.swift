@@ -12,8 +12,14 @@ class FavoritesViewModel: ObservableObject {
     @Published var favList: [String] = []
    
     
-    func addToList(course: String) {
-        favList.append(course)
+    func addToList(name: String) {
+       favList.append(name)
         //print(favList)
+    }
+    
+    
+    func removeFromList(name: String) {
+        favList.removeAll(where: {$0 == name})
+        
     }
 }

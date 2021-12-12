@@ -12,6 +12,7 @@ struct TeacherCard: View {
     @State var avgRating = 0.0
         @State var custom = StarRatingConfiguration( numberOfStars: 5, stepType: .exact,  borderWidth: 1.5, borderColor: .white, emptyColor: .clear, shadowRadius: 0.0, shadowColor: .white, fillColors: [.white, .white])
     var name: String
+    
     var body: some View {
         ZStack {
             if viewModelFetch.convertedReview.reviews.count == 0 {
