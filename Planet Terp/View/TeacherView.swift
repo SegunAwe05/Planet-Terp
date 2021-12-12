@@ -44,7 +44,7 @@ struct TeacherView: View {
                         .modifier(BarShadows())
                     Spacer()
                     Group {
-                        if vm.favList.contains(viewModelFetch.convertedReview.name!) {
+                        if vm.savedArray.contains(viewModelFetch.convertedReview.name!) {
                             Button {
                                 vm.removeFromList(name: viewModelFetch.convertedReview.name!)
                             } label: {

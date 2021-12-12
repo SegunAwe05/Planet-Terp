@@ -25,7 +25,7 @@ struct FavoriteView: View {
                     .cornerRadius(15)
                     .modifier(BarShadows())
                 Spacer().frame(height: 40)
-                if vm.favList.isEmpty {
+                if vm.savedArray.isEmpty {
                     VStack{
                         Spacer().frame(height: 180)
                     Image(systemName: "person.3.fill")
@@ -37,15 +37,18 @@ struct FavoriteView: View {
                             .foregroundColor(.gray)
                     }
                 } else {
-                ForEach(vm.favList, id: \.self) { fav in 
-                    TeacherCard(name: fav)
-                }
+                    ForEach(vm.savedArray, id: \.self) { fav in
+                        NavigationLink(destination: TeacherView(namm: fav)){
+                            TeacherCard(name: fav)
+                        }
+                        
+                    }
                 }
                 Spacer()
             }
         }.navigationBarTitle("")
-        .navigationBarHidden(true)
-            
+            .navigationBarHidden(true)
+        
     }
 }
 
