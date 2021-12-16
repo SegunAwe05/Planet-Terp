@@ -9,18 +9,17 @@ import Foundation
 
 
 class FavoritesViewModel: ObservableObject {
-    @Published var favList: [String] = []
-    let savedArray = UserDefaults.standard.object(forKey: "FavList") as? [String] ?? [String]()
+    @Published var savedArray = UserDefaults.standard.object(forKey: "FavList") as? [String] ?? [String]()
     
     func addToList(name: String) {
-       favList.append(name)
-        UserDefaults.standard.set(favList, forKey: "FavList")
+       savedArray.append(name)
+        UserDefaults.standard.setValue(savedArray, forKey: "FavList")
     }
     
     
     func removeFromList(name: String) {
-        favList.removeAll(where: {$0 == name})
-        UserDefaults.standard.set(favList, forKey: "FavList")
+        savedArray.removeAll(where: {$0 == name})
+        UserDefaults.standard.setValue(savedArray, forKey: "FavList")
         
     }
 }
