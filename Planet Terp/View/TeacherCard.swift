@@ -10,7 +10,6 @@ import StarRating
 struct TeacherCard: View {
     @StateObject var viewModelFetch = FetchReviews()
     @State var avgRating = 0.0
-        @State var custom = StarRatingConfiguration( numberOfStars: 5, stepType: .exact,  borderWidth: 1.5, borderColor: .white, emptyColor: .clear, shadowRadius: 0.0, shadowColor: .white, fillColors: [.white, .white])
     var name: String
     
     var body: some View {
@@ -43,7 +42,6 @@ struct TeacherCard: View {
                             .foregroundColor(.white)
                             .padding(.trailing, 115) // 115
                         
-                       // StarRating(initialRating: viewModelFetch.roundedValue, configuration: $custom).frame(width: 155, height: 20)
                         StarsView(rating: CGFloat(viewModelFetch.roundedValue), maxRating: 5)
                     }
                 }
@@ -64,33 +62,6 @@ struct TeacherCard_Previews: PreviewProvider {
     }
 }
 
-//struct MyCosmosView: UIViewRepresentable {
-////    @ObservedObject var viewModelFetch = fetchReviews()
-//    @StateObject var viewModelFetch = FetchReviews()
-//    
-//    func makeUIView(context: Context) -> CosmosView {
-//        CosmosView()
-//    }
-//
-//    func updateUIView(_ uiView: CosmosView, context: Context) {
-//      
-//        uiView.rating = viewModelFetch.avgRating
-//        // Autoresize Cosmos view according to it intrinsic size
-//        uiView.setContentHuggingPriority(.defaultHigh, for: .vertical)
-//        uiView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-//      
-//        // Change Cosmos view settings here
-//        uiView.settings.updateOnTouch = false
-//        uiView.settings.starSize = 23
-//        uiView.settings.fillMode = .precise
-//        uiView.settings.filledColor = UIColor.white
-//        uiView.settings.emptyBorderColor = UIColor.white
-//        uiView.settings.filledBorderColor = UIColor.white
-//        
-//    }
-//    
-//    
-//}
 struct StarsView: View {
     var rating: CGFloat
     var maxRating: Int

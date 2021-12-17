@@ -37,11 +37,13 @@ struct FavoriteView: View {
                             .foregroundColor(.gray)
                     }
                 } else {
-                    ForEach(vm.savedArray, id: \.self) { fav in
-                        NavigationLink(destination: TeacherView(namm: fav)){
-                            TeacherCard(name: fav)
+                    ScrollView {
+                        ForEach(vm.savedArray, id: \.self) { fav in
+                            NavigationLink(destination: TeacherView(namm: fav)){
+                                TeacherCard(name: fav)
+                            }
+                            
                         }
-                        
                     }
                 }
                 Spacer()

@@ -14,10 +14,13 @@ struct TeacherView: View {
     var namm: String
     @Environment( \.presentationMode) var goBack
     @EnvironmentObject var vm: FavoritesViewModel
+    @State private var showingAddHUD = false
+    @State private var showingDelHUD = false
+
 
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Rectangle()
                 .foregroundColor(offWhite)
                 .edgesIgnoringSafeArea(.all)
@@ -47,16 +50,18 @@ struct TeacherView: View {
                         if vm.savedArray.contains(viewModelFetch.convertedReview.name!) {
                             Button {
                                 vm.removeFromList(name: viewModelFetch.convertedReview.name!)
+                                showingDelHUD.toggle()
                             } label: {
-                                Image(systemName: "minus.circle")
+                                Image(systemName: "heart.fill")
                                     .foregroundColor(.blue)
                                     .padding()
                             }
                         } else {
                             Button {
                                 vm.addToList(name: viewModelFetch.convertedReview.name!)
+                                showingAddHUD.toggle()
                             } label: {
-                                Image(systemName: "plus")
+                                Image(systemName: "heart")
                                     .foregroundColor(.blue)
                                     .padding()
                             }
@@ -80,6 +85,34 @@ struct TeacherView: View {
             if viewModelFetch.isLoading {
                 ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
             }
+            
+            if showingAddHUD {
+                HUD {
+                    Label("Professor Added", systemImage: "heart.fill").foregroundColor(.blue).zIndex(1)
+                        .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                withAnimation {
+                                    showingAddHUD = false
+                                }
+                            }
+                        }
+                }
+            }
+            if showingDelHUD {
+                HUD {
+                    Label("Professor Removed", systemImage: "heart").foregroundColor(.blue).zIndex(1)
+                        .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                withAnimation {
+                                    showingDelHUD = false
+                                }
+                            }
+                        }
+                }
+            }
+            
         }.onAppear {
             viewModelFetch.getReview(name: namm.replacingOccurrences(of: " ", with: "%20", options: .regularExpression, range: nil))
         }
