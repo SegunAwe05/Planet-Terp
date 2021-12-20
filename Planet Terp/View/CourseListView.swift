@@ -11,6 +11,7 @@ struct CourseListView: View {
     var offWhite = Color("offWhite")
     @State var searchText = ""
     @StateObject var vm = coursesViewModel()
+    @Environment( \.presentationMode) var goBack
     var gridLayout = [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)]
     var body: some View {
         
@@ -22,14 +23,27 @@ struct CourseListView: View {
                             ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
                             } else {
             VStack {
-                Text("Planet Terp")
-                    .font(.title2).bold()
-                    .frame(width: 280, height: 45, alignment: .center)
-                    .foregroundColor(.white)
-                    .padding(3)
-                    .background(Color.blue)
-                    .cornerRadius(15)
-                    .modifier(BarShadows())
+                HStack {
+                    Spacer().frame(width:5)
+                    Button(action: {
+                        self.goBack.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.left").font(.system(size: 30))
+                            .frame(width: 40 , height: 40)
+                            .foregroundColor(.blue)
+                            .padding(5)
+                            .modifier(BarShadows())
+                    }
+                    Text("Courses")
+                        .font(.title2).bold()
+                        .frame(width: 280, height: 45, alignment: .center)
+                        .foregroundColor(.black)
+                        .padding(3)
+                        .background(offWhite)
+                        .cornerRadius(15)
+                        .modifier(BarShadows())
+                    Spacer()
+                }
                 SearchBarView(text: $searchText, placeHold: "Course: MATH, BMGT, CMSC")
                 Spacer()
                 ScrollView {

@@ -17,6 +17,4 @@ struct planetData: Codable, Hashable {
     var title: String?
     var department: String?
 }
-struct terpReview: Codable, Hashable {
-    
-}
+

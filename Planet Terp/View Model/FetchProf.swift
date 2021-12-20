@@ -19,7 +19,7 @@ class fetchProf: ObservableObject {
             DispatchQueue.main.async {
                 do {
                     let info = try JSONDecoder().decode(planetProf.self, from: data!)
-                    print("planet prof is working")
+                    //print("planet prof is working")
                     self.convertedProf = info
                 } catch {
                     print("error in planet prof")

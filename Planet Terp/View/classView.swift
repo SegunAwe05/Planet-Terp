@@ -9,7 +9,7 @@ import SwiftUI
 
 struct classView: View {
     var offWhite = Color("offWhite")
-    @State var data = planetData(professors: ["Teacher"], credits: 3, course_number: "115", description: "Class for", title: "Pre Calc", department: "MATH")
+    @State var data = planetData(professors: ["Teacher"], credits: 3, course_number: "115", description: "Class for ", title: "Pre Calc", department: "MATH")
     @ObservedObject var viewModel: FetchData
     @Environment( \.presentationMode) var goBack
     @State var isMore = false
@@ -56,11 +56,11 @@ struct classView: View {
                         Text("Description:")
                             .bold()
                             .foregroundColor(.blue)
-                            .padding(.trailing, 300)
+                            .padding(.trailing, 280)
                             .padding(2)
                         HStack(alignment: .bottom) {
                             Text(data.description?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil) ?? "No description for this class")
-                                .frame(width: 330, height: 65)
+                                .frame(width: 320, height: 65)
                                 .foregroundColor(Color.black.opacity(0.5))
                                 .padding(2)
                             
@@ -69,14 +69,16 @@ struct classView: View {
                             }) {
                                 Text("MORE")
                                     .foregroundColor(.blue)
-                                    .padding(4)
+                                    .padding(.trailing, 4)
                             }
                         }
                         // for each to show the array of professors.
-                        ForEach(data.professors?.sorted {$1 > $0} ?? ["N/A"], id: \.self) { prof in  //profModel.convertedProf.professors
+                        ForEach(data.professors?.sorted {$1 > $0} ?? ["N/A"], id: \.self) { prof in
+                          
                             NavigationLink(destination: TeacherView(viewModelFetch: FetchReviews(), namm: prof)) {
                                 TeacherCard(viewModelFetch: FetchReviews(), name: prof)
                             }
+                            
                         }
                         Spacer()
                     }
@@ -89,7 +91,10 @@ struct classView: View {
                 ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
             }
             
-        }
+       }
+//                .onAppear {
+//            print(data.professors?.randomElement()!)
+//        }
         .navigationBarTitle("")
         .navigationBarHidden(true)
         

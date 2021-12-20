@@ -9,7 +9,8 @@ import SwiftUI
 
 
 struct TeacherView: View {
-    @StateObject var viewModelFetch = FetchReviews()
+  
+   @StateObject var viewModelFetch = FetchReviews()
     var offWhite = Color("offWhite")
     var namm: String
     @Environment( \.presentationMode) var goBack

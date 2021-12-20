@@ -19,7 +19,8 @@ struct ContentView: View {
     var body: some View {
         TabView{
             NavigationView{
-                CourseListView()
+                HomeView()
+                //CourseListView()
             }  .tabItem {
                 Image(systemName: "house")
                 Text("Home")

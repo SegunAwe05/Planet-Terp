@@ -25,7 +25,7 @@ class coursesViewModel: ObservableObject {
                 } else {
                     self.isLoading = false
                     self.convertedData = info!
-                    print("getting courses is working")
+                   // print("getting courses is working")
                 }
             }
         }.resume()

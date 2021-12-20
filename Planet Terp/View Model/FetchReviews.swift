@@ -18,9 +18,7 @@ class FetchReviews: ObservableObject {
      var avgRating = Double()
     @Published var roundedValue = 0.0
    
-    
-    
-    
+
     func getReview(name: String) {
         isLoading = true
         guard let url = URL(string: "https://api.planetterp.com/v1/professor?name=\(name)&reviews=true") else {return}
@@ -34,7 +32,8 @@ class FetchReviews: ObservableObject {
                     self.convertedReview = info ?? ProfModel(name: "prof", reviews: [ProfReview(rating: 0, created: "0/00/0000", expected_grade: "", course: "", review: "")])
                     self.isLoading = false
                     self.getAvg()
-                    print(self.roundedValue)
+                   // self.removingZeros()
+                    //print(self.roundedValue)
                 }
             }
         }.resume()
@@ -49,10 +48,5 @@ class FetchReviews: ObservableObject {
             roundedValue = round(avgRating * 100) / 100.0
             
         }
-        
-        func sortingRating() {
-            
-        }
-        
     }
 }

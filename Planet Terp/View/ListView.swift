@@ -86,7 +86,7 @@ struct ListView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         ListView(course: "MATH")
     }

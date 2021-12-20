@@ -10,18 +10,21 @@ import StarRating
 struct TeacherCard: View {
     @StateObject var viewModelFetch = FetchReviews()
     @State var avgRating = 0.0
+    @ObservedObject var viewModel = FetchData()
     var name: String
     
     var body: some View {
         ZStack {
             if viewModelFetch.convertedReview.reviews.count == 0 {
-                EmptyView()
+             EmptyView()
+                Spacer()
             } else {
                 
                 
                 RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(.blue)
                     .frame(width: 380, height: 100)
+
                     .modifier(BarShadows())
                 VStack {
                     HStack {
@@ -44,16 +47,19 @@ struct TeacherCard: View {
                         
                         StarsView(rating: CGFloat(viewModelFetch.roundedValue), maxRating: 5)
                     }
+                }.padding(7)
+                .background(Color.blue)
+                    .cornerRadius(15)
+                  
+                .onAppear {
+                    viewModelFetch.getReview(name: name.replacingOccurrences(of: " ", with: "%20", options: .regularExpression, range: nil))
                 }
             }
-        }.onAppear {
-            viewModelFetch.getReview(name: name.replacingOccurrences(of: " ", with: "%20", options: .regularExpression, range: nil))
-           
-        }
+       
         
     }
     
-    
+    }
 }
 
 struct TeacherCard_Previews: PreviewProvider {

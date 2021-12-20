@@ -38,11 +38,13 @@ struct FavoriteView: View {
                     }
                 } else {
                     ScrollView {
+                        LazyVStack {
                         ForEach(vm.savedArray, id: \.self) { fav in
-                            NavigationLink(destination: TeacherView(namm: fav)){
+                            NavigationLink(destination: TeacherView(viewModelFetch: FetchReviews(), namm: fav)){
                                 TeacherCard(name: fav)
                             }
                             
+                        }
                         }
                     }
                 }
