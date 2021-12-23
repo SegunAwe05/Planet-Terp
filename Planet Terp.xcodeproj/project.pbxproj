@@ -26,6 +26,7 @@
 		5098335425BB5B7C004246C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5098335225BB5B7C004246C7 /* LaunchScreen.storyboard */; };
 		5098335D25BB5BB3004246C7 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5098335C25BB5BB3004246C7 /* ListView.swift */; };
 		5098336025BB5BD3004246C7 /* FetchPlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5098335F25BB5BD3004246C7 /* FetchPlanetData.swift */; };
+		50AF0AC22773B5AD005EF0C0 /* ProfCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50AF0AC02773B5AD005EF0C0 /* ProfCoreData.xcdatamodeld */; };
 		50CA09FB25C65600002DD26C /* classView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA09FA25C65600002DD26C /* classView.swift */; };
 		50E2B898274F1D2D00F00D56 /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2B897274F1D2C00F00D56 /* CourseListView.swift */; };
 		50E2B89A274F1D7800F00D56 /* coursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2B899274F1D7800F00D56 /* coursesModel.swift */; };
@@ -57,6 +58,7 @@
 		5098335525BB5B7C004246C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5098335C25BB5BB3004246C7 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		5098335F25BB5BD3004246C7 /* FetchPlanetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlanetData.swift; sourceTree = "<group>"; };
+		50AF0AC12773B5AD005EF0C0 /* ProfCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProfCoreData.xcdatamodel; sourceTree = "<group>"; };
 		50CA09FA25C65600002DD26C /* classView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classView.swift; sourceTree = "<group>"; };
 		50E2B897274F1D2C00F00D56 /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
 		50E2B899274F1D7800F00D56 /* coursesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coursesModel.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				5070B031265A0846008983C5 /* FetchProf.swift */,
 				50EAF2342756D34E00E2BAC4 /* FavoritesViewModel.swift */,
 				50E2B89B274F1D8E00F00D56 /* coursesViewModel.swift */,
+				50AF0AC02773B5AD005EF0C0 /* ProfCoreData.xcdatamodeld */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				50062F5E25D770C300999CFB /* SeachBarView.swift in Sources */,
 				5070B032265A0846008983C5 /* FetchProf.swift in Sources */,
 				5070B025265A0776008983C5 /* PlanetProf.swift in Sources */,
+				50AF0AC22773B5AD005EF0C0 /* ProfCoreData.xcdatamodeld in Sources */,
 				5098334825BB5B5E004246C7 /* AppDelegate.swift in Sources */,
 				50FABB372603028C00FA174B /* TeacherView.swift in Sources */,
 				5070B02F265A0825008983C5 /* FetchReviews.swift in Sources */,
@@ -493,6 +497,19 @@
 			productName = Cosmos;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		50AF0AC02773B5AD005EF0C0 /* ProfCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				50AF0AC12773B5AD005EF0C0 /* ProfCoreData.xcdatamodel */,
+			);
+			currentVersion = 50AF0AC12773B5AD005EF0C0 /* ProfCoreData.xcdatamodel */;
+			path = ProfCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5098333C25BB5B5D004246C7 /* Project object */;
 }

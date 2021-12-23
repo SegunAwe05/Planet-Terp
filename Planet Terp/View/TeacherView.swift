@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import CoreData
 
 struct TeacherView: View {
   
@@ -17,6 +17,8 @@ struct TeacherView: View {
     @EnvironmentObject var vm: FavoritesViewModel
     @State private var showingAddHUD = false
     @State private var showingDelHUD = false
+    @State var isContains = false
+    @State var isButtonTapped = false
 
 
     
@@ -48,21 +50,29 @@ struct TeacherView: View {
                         .modifier(BarShadows())
                     Spacer()
                     Group {
-                        if vm.savedArray.contains(viewModelFetch.convertedReview.name!) {
+                        if isContains == true {
                             Button {
-                                vm.removeFromList(name: viewModelFetch.convertedReview.name!)
+                                
+                                isButtonTapped.toggle()
+                                
+                                vm.deleteData(nameTxt: viewModelFetch.convertedReview.name!)
                                 showingDelHUD.toggle()
                             } label: {
-                                Image(systemName: "heart.fill")
+                                Image(systemName: isButtonTapped ? "heart" : "heart.fill")
                                     .foregroundColor(.blue)
                                     .padding()
                             }
                         } else {
                             Button {
-                                vm.addToList(name: viewModelFetch.convertedReview.name!)
+                                if isContains == true {
+                                isButtonTapped = false
+                                } else {
+                                    isButtonTapped = true
+                                }
+                                vm.addName(name: viewModelFetch.convertedReview.name!)
                                 showingAddHUD.toggle()
                             } label: {
-                                Image(systemName: "heart")
+                                Image(systemName: isButtonTapped ? "heart.fill" : "heart")
                                     .foregroundColor(.blue)
                                     .padding()
                             }
@@ -116,6 +126,9 @@ struct TeacherView: View {
             
         }.onAppear {
             viewModelFetch.getReview(name: namm.replacingOccurrences(of: " ", with: "%20", options: .regularExpression, range: nil))
+            if vm.someEntityExists(nameTxt: namm) == true {
+                isContains = true
+            }
         }
         .navigationTitle(namm)
         .navigationBarHidden(true)

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct FavoriteView: View {
     @EnvironmentObject var vm: FavoritesViewModel
     let offWhite = Color("offWhite")
@@ -25,7 +26,7 @@ struct FavoriteView: View {
                     .cornerRadius(15)
                     .modifier(BarShadows())
                 Spacer().frame(height: 40)
-                if vm.savedArray.isEmpty {
+                if vm.savedNames.isEmpty {
                     VStack{
                         Spacer().frame(height: 180)
                     Image(systemName: "person.3.fill")
@@ -37,16 +38,18 @@ struct FavoriteView: View {
                             .foregroundColor(.gray)
                     }
                 } else {
+                   
                     ScrollView {
                         LazyVStack {
-                        ForEach(vm.savedArray, id: \.self) { fav in
-                            NavigationLink(destination: TeacherView(viewModelFetch: FetchReviews(), namm: fav)){
-                                TeacherCard(name: fav)
+                        ForEach(vm.savedNames) { fav in
+                            NavigationLink(destination: TeacherView(viewModelFetch: FetchReviews(), namm: fav.name ?? "No Name")){
+                                TeacherCard(name: fav.name ?? "No Name")
                             }
                             
                         }
                         }
                     }
+                    
                 }
                 Spacer()
             }
