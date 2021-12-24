@@ -34,7 +34,7 @@ struct GraphView: View {
     var wGrade: Int
     var body: some View {
     
-        BarChartView(data: ChartData(values: [("Grade: A",aGrade), ("Grade: B",bGrade), ("Grade: C",cGrade), ("Grade: D",dGrade), ("Grade: F",fGrade), ("Grade: W", wGrade)]), title: "STAT100 Grades 2020", legend: "Grades", style: chartStyle, form: myCustomStyle
+        BarChartView(data: ChartData(values: [("Grade: A",aGrade), ("Grade: B",bGrade), ("Grade: C",cGrade), ("Grade: D",dGrade), ("Grade: F",fGrade), ("Grade: W", wGrade)]), title: "Calc1 2020 Grade Distribution", legend: "Grades", style: chartStyle, form: myCustomStyle
         )
     }
 }
