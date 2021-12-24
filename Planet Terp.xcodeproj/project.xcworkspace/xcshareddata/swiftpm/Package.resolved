@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "Cosmos",
-        "repositoryURL": "https://github.com/evgenyneu/Cosmos.git",
+        "package": "SwiftUICharts",
+        "repositoryURL": "https://github.com/AppPear/ChartView",
         "state": {
           "branch": null,
-          "revision": "cce521e734d0090494bd4afab5fd2e2f2465c1af",
-          "version": "23.0.0"
+          "revision": "4699847a9ac0c694666cea3acef133498952566e",
+          "version": "1.5.4"
         }
       },
       {

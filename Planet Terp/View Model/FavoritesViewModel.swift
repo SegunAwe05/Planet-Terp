@@ -82,8 +82,7 @@ class FavoritesViewModel: ObservableObject {
         catch {
             print("error executing fetch request: \(error)")
         }
-            print("this fucntion is being called LOLOLOL")
-        print(results.count)
+
         return results.count > 0
     }
     

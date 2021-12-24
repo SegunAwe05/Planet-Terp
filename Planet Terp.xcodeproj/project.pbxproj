@@ -12,7 +12,6 @@
 		501E0F3F2610352500649266 /* ReviewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E0F3E2610352500649266 /* ReviewCard.swift */; };
 		501E0F43261955CA00649266 /* StarRating in Frameworks */ = {isa = PBXBuildFile; productRef = 501E0F42261955CA00649266 /* StarRating */; };
 		502015B5277017DF00BE7015 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502015B4277017DE00BE7015 /* HomeView.swift */; };
-		50267B9426672A67000410E8 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 50267B9326672A67000410E8 /* Cosmos */; };
 		5070B025265A0776008983C5 /* PlanetProf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070B024265A0776008983C5 /* PlanetProf.swift */; };
 		5070B029265A07A9008983C5 /* PlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070B028265A07A9008983C5 /* PlanetData.swift */; };
 		5070B02C265A07F7008983C5 /* ProfModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070B02B265A07F7008983C5 /* ProfModel.swift */; };
@@ -27,6 +26,10 @@
 		5098335D25BB5BB3004246C7 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5098335C25BB5BB3004246C7 /* ListView.swift */; };
 		5098336025BB5BD3004246C7 /* FetchPlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5098335F25BB5BD3004246C7 /* FetchPlanetData.swift */; };
 		50AF0AC22773B5AD005EF0C0 /* ProfCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50AF0AC02773B5AD005EF0C0 /* ProfCoreData.xcdatamodeld */; };
+		50AF0AC427743219005EF0C0 /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF0AC327743218005EF0C0 /* GraphModel.swift */; };
+		50AF0AC62774EC21005EF0C0 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF0AC52774EC21005EF0C0 /* GraphViewModel.swift */; };
+		50AF0ACC2774F1BB005EF0C0 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF0ACB2774F1BB005EF0C0 /* GraphView.swift */; };
+		50AF0ACF2774F4BC005EF0C0 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 50AF0ACE2774F4BC005EF0C0 /* SwiftUICharts */; };
 		50CA09FB25C65600002DD26C /* classView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA09FA25C65600002DD26C /* classView.swift */; };
 		50E2B898274F1D2D00F00D56 /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2B897274F1D2C00F00D56 /* CourseListView.swift */; };
 		50E2B89A274F1D7800F00D56 /* coursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2B899274F1D7800F00D56 /* coursesModel.swift */; };
@@ -59,6 +62,9 @@
 		5098335C25BB5BB3004246C7 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		5098335F25BB5BD3004246C7 /* FetchPlanetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlanetData.swift; sourceTree = "<group>"; };
 		50AF0AC12773B5AD005EF0C0 /* ProfCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProfCoreData.xcdatamodel; sourceTree = "<group>"; };
+		50AF0AC327743218005EF0C0 /* GraphModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel.swift; sourceTree = "<group>"; };
+		50AF0AC52774EC21005EF0C0 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
+		50AF0ACB2774F1BB005EF0C0 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		50CA09FA25C65600002DD26C /* classView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classView.swift; sourceTree = "<group>"; };
 		50E2B897274F1D2C00F00D56 /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
 		50E2B899274F1D7800F00D56 /* coursesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coursesModel.swift; sourceTree = "<group>"; };
@@ -75,8 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50267B9426672A67000410E8 /* Cosmos in Frameworks */,
 				501E0F43261955CA00649266 /* StarRating in Frameworks */,
+				50AF0ACF2774F4BC005EF0C0 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +104,7 @@
 				50EAF2322756D33600E2BAC4 /* FavoriteView.swift */,
 				50E2B89D274F296000F00D56 /* CoursesCards.swift */,
 				5011C746276C32960058EAEB /* HudView.swift */,
+				50AF0ACB2774F1BB005EF0C0 /* GraphView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,7 +117,7 @@
 				5070B031265A0846008983C5 /* FetchProf.swift */,
 				50EAF2342756D34E00E2BAC4 /* FavoritesViewModel.swift */,
 				50E2B89B274F1D8E00F00D56 /* coursesViewModel.swift */,
-				50AF0AC02773B5AD005EF0C0 /* ProfCoreData.xcdatamodeld */,
+				50AF0AC52774EC21005EF0C0 /* GraphViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -120,6 +127,7 @@
 			children = (
 				5070B024265A0776008983C5 /* PlanetProf.swift */,
 				5070B028265A07A9008983C5 /* PlanetData.swift */,
+				50AF0AC327743218005EF0C0 /* GraphModel.swift */,
 				50E2B899274F1D7800F00D56 /* coursesModel.swift */,
 				5070B02B265A07F7008983C5 /* ProfModel.swift */,
 			);
@@ -151,6 +159,7 @@
 				5070B023265A073E008983C5 /* Model */,
 				5053170026522EF20021D0F4 /* View Model */,
 				5098334D25BB5B7C004246C7 /* Assets.xcassets */,
+				50AF0AC02773B5AD005EF0C0 /* ProfCoreData.xcdatamodeld */,
 				5098335225BB5B7C004246C7 /* LaunchScreen.storyboard */,
 				5098335525BB5B7C004246C7 /* Info.plist */,
 				5098334F25BB5B7C004246C7 /* Preview Content */,
@@ -184,7 +193,7 @@
 			name = "Planet Terp";
 			packageProductDependencies = (
 				501E0F42261955CA00649266 /* StarRating */,
-				50267B9326672A67000410E8 /* Cosmos */,
+				50AF0ACE2774F4BC005EF0C0 /* SwiftUICharts */,
 			);
 			productName = "Planet Terp";
 			productReference = 5098334425BB5B5E004246C7 /* Planet Terp.app */;
@@ -215,7 +224,7 @@
 			mainGroup = 5098333B25BB5B5D004246C7;
 			packageReferences = (
 				501E0F41261955C900649266 /* XCRemoteSwiftPackageReference "StarRating" */,
-				50267B9226672A67000410E8 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				50AF0ACD2774F4BC005EF0C0 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 5098334525BB5B5E004246C7 /* Products */;
 			projectDirPath = "";
@@ -264,10 +273,13 @@
 				50E2B89C274F1D8E00F00D56 /* coursesViewModel.swift in Sources */,
 				501E0F3F2610352500649266 /* ReviewCard.swift in Sources */,
 				5011C747276C32960058EAEB /* HudView.swift in Sources */,
+				50AF0ACC2774F1BB005EF0C0 /* GraphView.swift in Sources */,
 				5070B02C265A07F7008983C5 /* ProfModel.swift in Sources */,
 				5098334A25BB5B5E004246C7 /* SceneDelegate.swift in Sources */,
 				502015B5277017DF00BE7015 /* HomeView.swift in Sources */,
 				5098334C25BB5B5E004246C7 /* ContentView.swift in Sources */,
+				50AF0AC427743219005EF0C0 /* GraphModel.swift in Sources */,
+				50AF0AC62774EC21005EF0C0 /* GraphViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,12 +487,12 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		50267B9226672A67000410E8 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+		50AF0ACD2774F4BC005EF0C0 /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			repositoryURL = "https://github.com/AppPear/ChartView";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 23.0.0;
+				kind = exactVersion;
+				version = 1.5.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -491,10 +503,10 @@
 			package = 501E0F41261955C900649266 /* XCRemoteSwiftPackageReference "StarRating" */;
 			productName = StarRating;
 		};
-		50267B9326672A67000410E8 /* Cosmos */ = {
+		50AF0ACE2774F4BC005EF0C0 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 50267B9226672A67000410E8 /* XCRemoteSwiftPackageReference "Cosmos" */;
-			productName = Cosmos;
+			package = 50AF0ACD2774F4BC005EF0C0 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 
