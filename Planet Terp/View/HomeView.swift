@@ -10,8 +10,8 @@ import SwiftUICharts
 
 struct HomeView: View {
     @StateObject var viewModelFetch = FetchReviews()
-    @State var profGoon = ["Jeff%20Miller", "Pamela%20Duffy", "Susan%20Mazzullo", "Jennifer%20Golbeck", "Eliza%20Kempton", "Evan%20Golub", "Denny%20Gulick", "Jingren%20Chi"]
     @StateObject var vm = GraphViewModel()
+    @State var profList = ["Jeff%20Miller", "Pamela%20Duffy", "Susan%20Mazzullo", "Jennifer%20Golbeck", "Eliza%20Kempton", "Evan%20Golub", "Denny%20Gulick", "Jingren%20Chi"]
     var body: some View {
         ZStack {
             Rectangle()
@@ -23,7 +23,6 @@ struct HomeView: View {
                     Text("Welcome to Planet Terp!")
                         .font(.title).bold()
                         .foregroundColor(.blue)
-                    
                         .padding(.trailing, 65)
                     Spacer().frame(height: 30)
                     Text("Popular Reviews:").foregroundColor(.blue).padding(1).padding(.trailing, 250)
@@ -96,23 +95,19 @@ struct HomeView: View {
                             .modifier(BarShadows())
                         }.padding(.horizontal, 10)
                     }
-                    
-                    GraphView(aGrade: vm.aTotal, bGrade: vm.bTotal, cGrade: vm.cTotal, dGrade: vm.dTotal, fGrade: vm.fTotal, wGrade: vm.wTotal)
-                    //GraphView(aGrade: 155, bGrade: 47, cGrade: 28, dGrade: 1, fGrade: 7, wGrade: 19)
-                    //GraphView()
-                        .padding(5)
-                        
-                        
+                    if vm.isLoading {
+                        ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
+                    } else {
+                        GraphView(aGrade: vm.aTotal, bGrade: vm.bTotal, cGrade: vm.cTotal, dGrade: vm.dTotal, fGrade: vm.fTotal, wGrade: vm.wTotal)
+                            .padding(5)
+                    }
                     Spacer()
-                    
-                    
                 }
             }
         }.onAppear {
-            viewModelFetch.getReview(name: profGoon.randomElement()!)
+            viewModelFetch.getReview(name: profList.randomElement()!)
             Styles.barChartStyleNeonBlueLight.dropShadowColor = Color.clear
             chartStyle.darkModeStyle = darkStyle
-//            vm.addGrades()
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)

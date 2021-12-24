@@ -12,7 +12,6 @@ import Foundation
 class FetchReviews: ObservableObject {
     @Published var convertedReview = ProfModel(name: "prof", reviews: [ProfReview(rating: 1 , created: "0/00/0000", expected_grade: "", course: "", review: "")])
     @Published var isLoading = false
-    
      var sum = Int()
      var count = Int()
      var avgRating = Double()
@@ -32,8 +31,7 @@ class FetchReviews: ObservableObject {
                     self.convertedReview = info ?? ProfModel(name: "prof", reviews: [ProfReview(rating: 0, created: "0/00/0000", expected_grade: "", course: "", review: "")])
                     self.isLoading = false
                     self.getAvg()
-                   // self.removingZeros()
-                    //print(self.roundedValue)
+                  
                 }
             }
         }.resume()

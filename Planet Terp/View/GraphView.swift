@@ -32,14 +32,10 @@ struct GraphView: View {
     var dGrade: Int
     var fGrade: Int
     var wGrade: Int
-    @StateObject var vm = GraphViewModel()
     var body: some View {
     
         BarChartView(data: ChartData(values: [("Grade: A",aGrade), ("Grade: B",bGrade), ("Grade: C",cGrade), ("Grade: D",dGrade), ("Grade: F",fGrade), ("Grade: W", wGrade)]), title: "STAT100 Grades 2020", legend: "Grades", style: chartStyle, form: myCustomStyle
         )
-            
-        
-        
     }
 }
 
