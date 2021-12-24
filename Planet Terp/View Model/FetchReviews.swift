@@ -32,6 +32,7 @@ class FetchReviews: ObservableObject {
                     self.isLoading = false
                     self.getAvg()
                   
+                  
                 }
             }
         }.resume()

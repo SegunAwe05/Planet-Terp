@@ -26,8 +26,8 @@ class FetchData: ObservableObject {
                 if error != nil {
                     print("planet data error")
                 } else {
-                    self.isLoading = false
                     self.convertedData = info!
+                    self.isLoading = false
                    // print("planet data is working")
                 }
             }

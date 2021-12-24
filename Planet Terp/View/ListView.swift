@@ -27,6 +27,11 @@ struct ListView: View {
                     dismissKey()
                 }
             VStack {
+                if viewModel.isLoading {
+                    ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
+                } else {
+                    
+                
             HStack {
                 Spacer().frame(width:5)
                 Button(action: {
@@ -75,8 +80,6 @@ struct ListView: View {
             }
             
         }
-            if viewModel.isLoading {
-                ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
             }
         }.onAppear {
        
