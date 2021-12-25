@@ -97,11 +97,15 @@ struct HomeView: View {
                         }.padding(.horizontal, 10)
                     }
                     if vm.isLoading {
-                        ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
+                        
+                        GraphView(aGrade: vm.aTotal, bGrade: vm.bTotal, cGrade: vm.cTotal, dGrade: vm.dTotal, fGrade: vm.fTotal, wGrade: vm.wTotal, course: courseList.randomElement()!)
+                        .padding(5)
+                        .redacted(reason: vm.isLoading ? .placeholder : [])
                     } else {
                         GraphView(aGrade: vm.aTotal, bGrade: vm.bTotal, cGrade: vm.cTotal, dGrade: vm.dTotal, fGrade: vm.fTotal, wGrade: vm.wTotal, course: courseList.randomElement()!)
                             .padding(5)
                     }
+                    
                     Spacer()
                 }
             }

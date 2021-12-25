@@ -81,8 +81,7 @@ struct ListView: View {
             
         }
             }
-        }.onAppear {
-       
+        }.onAppear {       
             viewModel.getData(course: course)
         }.navigationBarTitle("classes")
         .navigationBarHidden(true)

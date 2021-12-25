@@ -13,7 +13,7 @@ import Foundation
 class FetchData: ObservableObject {
     @Published var convertedData: [planetData] = []
     @Published var isLoading = false
-    var fetchVM = FetchReviews()
+  
     
     func getData(course: String) {
         isLoading = true
@@ -29,16 +29,13 @@ class FetchData: ObservableObject {
                     self.convertedData = info!
                     self.isLoading = false
                    // print("planet data is working")
+                   
                 }
             }
         }.resume()
     }
     
-//    func removeZero() {
-//        if fetchVM.convertedReview.reviews.count == 0 {
-//            convertedData.
-//        }
-    //}
+
 }
 
 

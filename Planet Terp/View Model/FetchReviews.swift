@@ -16,6 +16,7 @@ class FetchReviews: ObservableObject {
      var count = Int()
      var avgRating = Double()
     @Published var roundedValue = 0.0
+    var planet = FetchData()
    
 
     func getReview(name: String) {
@@ -31,8 +32,7 @@ class FetchReviews: ObservableObject {
                     self.convertedReview = info ?? ProfModel(name: "prof", reviews: [ProfReview(rating: 0, created: "0/00/0000", expected_grade: "", course: "", review: "")])
                     self.isLoading = false
                     self.getAvg()
-                  
-                  
+          
                 }
             }
         }.resume()

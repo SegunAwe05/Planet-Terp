@@ -12,6 +12,7 @@ struct classView: View {
     @State var data = planetData(professors: ["Teacher"], credits: 3, course_number: "115", description: "Class for ", title: "Pre Calc", department: "MATH")
     @ObservedObject var viewModel: FetchData
     @Environment( \.presentationMode) var goBack
+  
     @State var isMore = false
     @State var showGraph = false
         
@@ -109,9 +110,7 @@ struct classView: View {
                 
             
        }
-//                .onAppear {
-//            print(data.professors?.randomElement()!)
-//        }
+      
         .navigationBarTitle("")
         .navigationBarHidden(true)
         

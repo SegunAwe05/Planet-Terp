@@ -10,7 +10,6 @@ import StarRating
 struct TeacherCard: View {
     @StateObject var viewModelFetch = FetchReviews()
     @State var avgRating = 0.0
-    @ObservedObject var viewModel = FetchData()
     var name: String
     
     var body: some View {
@@ -43,7 +42,7 @@ struct TeacherCard: View {
                         
                         Text("Rating: \(viewModelFetch.roundedValue.round)")
                             .foregroundColor(.white)
-                            .padding(.trailing, 115) // 115
+                            .padding(.trailing, 115) 
                         
                         StarsView(rating: CGFloat(viewModelFetch.roundedValue), maxRating: 5)
                     }
@@ -53,6 +52,7 @@ struct TeacherCard: View {
                   
                 .onAppear {
                     viewModelFetch.getReview(name: name.replacingOccurrences(of: " ", with: "%20", options: .regularExpression, range: nil))
+                    
                 }
             }
        

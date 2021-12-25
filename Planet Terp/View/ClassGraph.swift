@@ -15,13 +15,20 @@ struct ClassGraph: View {
         ZStack {
             Color("offWhite")
                 .edgesIgnoringSafeArea(.all)
-            VStack {
+            VStack() {
+                Capsule()
+                    .foregroundColor(Color.gray.opacity(0.4))
+                    .frame(width: 100, height: 5)
+                    .padding(.top, 10)
+                Spacer()
                 if vm.isLoading{
-                    ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
+                    GraphView(aGrade: vm.aTotal, bGrade: vm.bTotal, cGrade: vm.cTotal, dGrade: vm.dTotal, fGrade: vm.fTotal, wGrade: vm.wTotal, course: className)
+                    .redacted(reason: vm.isLoading ? .placeholder : [])
                 } else {
                     GraphView(aGrade: vm.aTotal, bGrade: vm.bTotal, cGrade: vm.cTotal, dGrade: vm.dTotal, fGrade: vm.fTotal, wGrade: vm.wTotal, course: className)
                 }
-            }
+                Spacer()
+            }.padding(.bottom, 180)
             
         }.onAppear {
             vm.getData(course: className)
