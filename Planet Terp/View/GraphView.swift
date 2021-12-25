@@ -32,15 +32,16 @@ struct GraphView: View {
     var dGrade: Int
     var fGrade: Int
     var wGrade: Int
+    var course: String
     var body: some View {
     
-        BarChartView(data: ChartData(values: [("Grade: A",aGrade), ("Grade: B",bGrade), ("Grade: C",cGrade), ("Grade: D",dGrade), ("Grade: F",fGrade), ("Grade: W", wGrade)]), title: "Calc1 2020 Grade Distribution", legend: "Grades", style: chartStyle, form: myCustomStyle
+        BarChartView(data: ChartData(values: [("Grade: A",aGrade), ("Grade: B",bGrade), ("Grade: C",cGrade), ("Grade: D",dGrade), ("Grade: F",fGrade), ("Grade: W", wGrade)]), title: "\(course) 2020 Grade Distribution", legend: "Grades", style: chartStyle, form: myCustomStyle
         )
     }
 }
 
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphView(aGrade: 8, bGrade: 7, cGrade: 4, dGrade: 2, fGrade: 1, wGrade: 0)
+        GraphView(aGrade: 8, bGrade: 7, cGrade: 4, dGrade: 2, fGrade: 1, wGrade: 0, course: "MATH140")
     }
 }

@@ -12,6 +12,7 @@ struct HomeView: View {
     @StateObject var viewModelFetch = FetchReviews()
     @StateObject var vm = GraphViewModel()
     @State var profList = ["Jeff%20Miller", "Pamela%20Duffy", "Susan%20Mazzullo", "Jennifer%20Golbeck", "Eliza%20Kempton", "Evan%20Golub", "Denny%20Gulick", "Jingren%20Chi"]
+    @State var courseList = ["MATH140", "STAT100", "INST126", "INST201", "MATH115", "ENGL101", "BMGT110", "PSYC100"]
     var body: some View {
         ZStack {
             Rectangle()
@@ -98,7 +99,7 @@ struct HomeView: View {
                     if vm.isLoading {
                         ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
                     } else {
-                        GraphView(aGrade: vm.aTotal, bGrade: vm.bTotal, cGrade: vm.cTotal, dGrade: vm.dTotal, fGrade: vm.fTotal, wGrade: vm.wTotal)
+                        GraphView(aGrade: vm.aTotal, bGrade: vm.bTotal, cGrade: vm.cTotal, dGrade: vm.dTotal, fGrade: vm.fTotal, wGrade: vm.wTotal, course: courseList.randomElement()!)
                             .padding(5)
                     }
                     Spacer()
@@ -108,6 +109,7 @@ struct HomeView: View {
             viewModelFetch.getReview(name: profList.randomElement()!)
             Styles.barChartStyleNeonBlueLight.dropShadowColor = Color.clear
             chartStyle.darkModeStyle = darkStyle
+            vm.getData(course: courseList.randomElement()!)
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)

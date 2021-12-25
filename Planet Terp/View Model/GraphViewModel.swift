@@ -21,14 +21,14 @@ class GraphViewModel: ObservableObject {
     @Published var wTotal = 0
     @Published var isLoading = false
     
-    init() {
-        getData()
-    }
+//    init() {
+//        getData()
+//    }
  
     //getting the json data
-    func getData() {
+    func getData(course: String) {
         isLoading = true
-        guard let url = URL(string:  "https://api.planetterp.com/v1/grades?course=MATH140&professor=Denny%20Gulick&semester=202008") else {return}
+        guard let url = URL(string:  "https://api.planetterp.com/v1/grades?course=\(course)&semester=202008") else {return}
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             let value = try? JSONDecoder().decode([GraphModel].self, from: data!)
             DispatchQueue.main.async { [self] in

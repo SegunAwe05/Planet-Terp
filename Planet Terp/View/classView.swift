@@ -13,6 +13,7 @@ struct classView: View {
     @ObservedObject var viewModel: FetchData
     @Environment( \.presentationMode) var goBack
     @State var isMore = false
+    @State var showGraph = false
         
     var body: some View {
         ZStack {
@@ -41,8 +42,17 @@ struct classView: View {
                                 .background(Color.blue)
                                 .cornerRadius(15)
                                 .modifier(BarShadows())
-                            Spacer()
+                           // Spacer()
                           
+                            Button {
+                                showGraph.toggle()
+                            } label: {
+                                Image(systemName: "chart.bar.xaxis")
+                                    .font(.system(size: 25.0))
+                                    .padding(5)
+                            }.padding(.trailing, 4)
+                            Spacer()
+
 
                         }
                         Spacer().frame(height: 10)
@@ -84,12 +94,19 @@ struct classView: View {
                     }
                 }
             }
+            .sheet(isPresented: $showGraph, content: {
+                ClassGraph(className: "\(data.department ?? "MATH")\(data.course_number ?? "115")")
+              })
+            
+            
             if isMore {
                 descripView(isMore: $isMore, data: $data)
             }
             if viewModel.isLoading {
                 ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .blue)).scaleEffect(2)
             }
+            
+                
             
        }
 //                .onAppear {
