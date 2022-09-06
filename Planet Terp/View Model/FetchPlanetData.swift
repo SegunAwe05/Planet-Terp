@@ -17,7 +17,7 @@ class FetchData: ObservableObject {
     
     func getData(course: String) {
         isLoading = true
-        guard let url = URL(string: "https://api.planetterp.com/v1/courses?department=\(course)&reviews=true&limit=1000") else {return}
+        guard let url = URL(string: "https://api.planetterp.com/v1/courses?department=\(course)&reviews=true&limit=100") else {return}
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             let info = try? JSONDecoder().decode([planetData].self, from: data!)
